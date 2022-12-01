@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.certus.spring.models.Usuario;
+
 
 
 
@@ -54,8 +56,7 @@ public class HomeController {
    @GetMapping("/crear")
 	public String Formulario(Model model) {
 	   model.addAttribute("TituloPagina", titlePage);
-	   model.addAttribute("titulo", "Formulario");
-	   
+	   model.addAttribute("titulo", "Formulario de usuarios");
 		return "Formulario";
 	}
    

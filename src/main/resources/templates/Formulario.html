@@ -20,7 +20,7 @@
     <a class="navbar-brand" th:href="@{/app/home}">HOME</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" th:href="@{/app/listar}">Lista</a>
       </li>
       <li class="nav-item active">
@@ -33,42 +33,37 @@
     </form>
   </div>
 </nav>
-
+<br>
 <h1 th:text="${titulo}" style="text-align: center"></h1>
 
 <!-- formulario  -->
 
 <form  method="post"  class="m-4 container">
   <div class="form-group">
-    <label for="">Nombre</label>
-    <input type="text" name="Nombre" class="form-control" id="id">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="Nombre" class="form-control" id="nombre">
     <div class="alert alert-danger" role="alert"  ></div>
   </div>
   <div class="form-group">
-    <label for="id">dato1</label>
-    <input type="text" name="Tipo" class="form-control" id="id">
+    <label for="user">User</label>
+    <input type="text" name="User" class="form-control" id="user">
    <div class="alert alert-danger" role="alert"></div>
   </div>
    <div class="form-group">
-    <label for="id">dato1</label>
-    <input type="text" name="Raza" class="form-control" id="id">
+    <label for="password">Password</label>
+    <input type="password" name="Password" class="form-control" id="password">
    <div class="alert alert-danger" role="alert"  ></div>
   </div>
   
    <div class="form-group">
-    <label for="id">dato1</label>
-    <input type="text" name="Color" class="form-control" id="id">
+    <label for="cod-sucursal">Cod_Sucursal</label>
+    <input type="text" name="Cod_Sucursal" class="form-control" id="cod-sucursal">
    <div class="alert alert-danger" role="alert"  ></div>
   </div>
   
-   <div class="form-group">
-    <label for="id">dato1</label>
-    <input type="text" name="edad" class="form-control" id="idEdad">
-   <div class="alert alert-danger" role="alert" ></div>
-  </div>
   
 
-  <button type="submit" class="btn btn-success" >crear</button>
+  <button type="submit" class="btn btn-success" >Ingresar</button>
 </form>
 
 <!-- FOOTER -->
@@ -103,7 +98,7 @@
     
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright: Grupo ### - Todos los derechos reservados
+        © 2022 Copyright: Grupo 06 - Todos los derechos reservados
       </div>
 
     </footer>
