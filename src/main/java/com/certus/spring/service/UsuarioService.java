@@ -11,7 +11,7 @@ import com.certus.spring.models.Response;
 @Service
 public class UsuarioService implements IUsuarioService {
 
-	public Response<Usuario> crearMascota(Usuario UsuarioRecibo) {
+	public Response<Usuario> crearUsuario(Usuario UsuarioRecibo) {
 
 		
 		
@@ -87,4 +87,10 @@ public class UsuarioService implements IUsuarioService {
 
 		return "Usuario  eliminada";
 	}
+
+
+
+
+
+	
 }
