@@ -11,61 +11,59 @@ import com.certus.spring.models.Response;
 @Service
 public class UsuarioService implements IUsuarioService {
 
-	public Response<> crearMascota(Mascota mascotaRecibo) {
+	public Response<Usuario> crearMascota(Usuario UsuarioRecibo) {
 
 		
 		
-		Response1<Mascota> response1 = new Response1<>();
+		Response<Usuario> response = new Response<>();
 		boolean estadoCreacion = false;
 		
-		List<Mascota> listita1 = new ArrayList<>();
+		List<Usuario> listita1 = new ArrayList<>();
 
 		//creando segunda mascota
 		
-		Mascota mascota1 = new Mascota();
+		Usuario usuario1 = new Usuario();
 
-		mascota1.setNombre("Manchita");
-		mascota1.setTipo("Gato");
-		mascota1.setRaza("Atigrado");
-		mascota1.setColor("Blanco con manchas medias plomas");
-		mascota1.setEdad("1 año");
+		usuario1.setNombre("aaaaaaaa");
+		usuario1.setUser("222222");
+		usuario1.setPassword("aaaaa");
+		usuario1.setCod_Sucursal("222222");
+
 		
 		//Creando segunda mascota
 		
-		Mascota mascota2 = new Mascota();
+		Usuario usuario2 = new Usuario();
 
-		mascota2.setNombre("Tato");
-		mascota2.setTipo("Gato");
-		mascota2.setRaza("atigrado");
-		mascota2.setColor("naranja");
-		mascota2.setEdad("2 año");
+		usuario2.setNombre("eeeeeee");
+		usuario2.setUser("33333");
+		usuario2.setPassword("eeeee");
+		usuario2.setCod_Sucursal("33333");
  
 		
 		//agregando la mascota a la lista
 				
-		listita1.add(mascota1);
-		listita1.add(mascota2);
+		listita1.add(usuario1);
+		listita1.add(usuario2);
 
         //validacion 
-		if(mascotaRecibo.getNombre() != null &&
-				mascotaRecibo.getTipo() != null	&&
-				mascotaRecibo.getRaza() != null &&
-				mascotaRecibo.getColor() != null &&
-				mascotaRecibo.getEdad() != null
+		if(UsuarioRecibo.getNombre() != null &&
+				UsuarioRecibo.getUser() != null	&&
+						UsuarioRecibo.getPassword() != null &&
+								UsuarioRecibo.getCod_Sucursal() != null 
 				) {
-			listita1.add(mascotaRecibo);
+			listita1.add(UsuarioRecibo);
 		}
 	
 		
 		//Validacion de lista de personajes
 		if(listita1.size() > 0) {
 			estadoCreacion = true;
-			response1.setEstado1(estadoCreacion);
-			response1.setMensaje1("Creado correctamente");
-			response1.setData1(listita1);
+			response.setEstado(estadoCreacion);
+			response.setMensaje("Creado correctamente");
+			response.setData(listita1);
 		}else {
-			response1.setEstado1(estadoCreacion);
-			response1.setMensaje1("Se produjo un error al crear la mascota");
+			response.setEstado(estadoCreacion);
+			response.setMensaje("Se produjo un error al crear la mascota");
 		}
 		
 		
@@ -74,19 +72,19 @@ public class UsuarioService implements IUsuarioService {
 		
 		
 
-		return response1;
+		return response;
 	}
 
 	
 	
 	
-	public String EditarMascota() {
+	public String EditarUsuario() {
 
-		return "Mascota editada";
+		return "Usuario editada";
 	}
 
-	public String EliminarMascota() {
+	public String EliminarUsuario() {
 
-		return "Mascota eliminada";
+		return "Usuario  eliminada";
 	}
 }
