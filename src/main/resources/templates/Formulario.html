@@ -17,14 +17,14 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="">HOME</a>
+    <a class="navbar-brand" th:href="@{/app/home}">HOME</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
       <li class="nav-item active">
-        <a class="nav-link" href="#">Lista</a>
+        <a class="nav-link" th:href="@{/app/listar}">Lista</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Formulario</a>
+        <a class="nav-link"th:href="@{/app/crear}">Formulario</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -35,9 +35,40 @@
 </nav>
 
 
+<!-- formulario  -->
 
+<form  method="post"  class="m-4 container">
+  <div class="form-group">
+    <label for="">dato1</label>
+    <input type="text" name="Nombre" class="form-control" id="id">
+    <div class="alert alert-danger" role="alert"  ></div>
+  </div>
+  <div class="form-group">
+    <label for="id">dato1</label>
+    <input type="text" name="Tipo" class="form-control" id="id">
+   <div class="alert alert-danger" role="alert"></div>
+  </div>
+   <div class="form-group">
+    <label for="id">dato1</label>
+    <input type="text" name="Raza" class="form-control" id="id">
+   <div class="alert alert-danger" role="alert"  ></div>
+  </div>
+  
+   <div class="form-group">
+    <label for="id">dato1</label>
+    <input type="text" name="Color" class="form-control" id="id">
+   <div class="alert alert-danger" role="alert"  ></div>
+  </div>
+  
+   <div class="form-group">
+    <label for="id">dato1</label>
+    <input type="text" name="edad" class="form-control" id="idEdad">
+   <div class="alert alert-danger" role="alert" ></div>
+  </div>
+  
 
-
+  <button type="submit" class="btn btn-success" >crear</button>
+</form>
 
 <!-- FOOTER -->
 
