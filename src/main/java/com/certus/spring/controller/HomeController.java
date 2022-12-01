@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 
+
+
 @Controller
 @RequestMapping("/app")
 public class HomeController {
@@ -28,6 +30,9 @@ public class HomeController {
 	
    @GetMapping({ "/home", "/inicio", "/", "/Home", "/Inicio" })
 	public String Home(Model model) {
+	   model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("titulo1", "Esta es la lista de mascotas");
+		
 
 
 		return "Home";
