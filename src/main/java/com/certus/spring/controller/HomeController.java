@@ -2,14 +2,24 @@ package com.certus.spring.controller;
 
 
 
+
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
+import com.certus.spring.models.Response;
+import com.certus.spring.models.Usuario;
+import com.certus.spring.service.IUsuarioService;
+
+import jakarta.validation.Valid;
 
 
 
@@ -27,6 +37,11 @@ public class HomeController {
 
 	 @Value("${title.generic}")
 	 private String titlePage;
+	 
+	 @Autowired
+		private IUsuarioService InterfaceUsuario;
+		
+
 	
    @GetMapping({ "/home", "/inicio", "/", "/Home", "/Inicio" })
 	public String Home(Model model) {
@@ -51,13 +66,25 @@ public class HomeController {
    
    
    
+   
+   
+   
+   
    @GetMapping("/crear")
 	public String Formulario(Model model) {
-	   model.addAttribute("TituloPagina", titlePage);
-	   model.addAttribute("titulo", "Formulario");
-	   
+		model.addAttribute("tituloPagina", titlePage);
+		model.addAttribute("tituloFormulario", "Formulario usuario");
+
+		Usuario usuario = new Usuario();
+		model.addAttribute("usuario", usuario);
+		
+		
 		return "Formulario";
 	}
+   
+   
+   
+   
    
    
 	@GetMapping("/Editar/{idPersonaje}")
@@ -75,9 +102,21 @@ public class HomeController {
 	
 
 	@PostMapping("/form")
-	public String creaPersonaje() {
+	public String crearUsuario(@Valid Usuario random, BindingResult result ,Model model) {
 			
-			return "errores";
+		if (result.hasErrors()) {
+			return "Formulario1";
+		}
+		
+		Response<Usuario> rspta = InterfaceUsuario.crearUsuario(random);
+		
+		    model.addAttribute("listita1",rspta.getData());
+			model.addAttribute("tituloPagina", titlePage);
+			model.addAttribute("tituloFormulario1", "Formulario Mascota");			
+			
+			
+			
+			return "Lista";
 		
 
 	}
