@@ -31,7 +31,7 @@ public class HomeController {
    @GetMapping({ "/home", "/inicio", "/", "/Home", "/Inicio" })
 	public String Home(Model model) {
 	   model.addAttribute("TituloPagina", titlePage);
-		model.addAttribute("titulo", "Esta es el home");
+		model.addAttribute("titulo", "Home principal");
 		
 		
 
