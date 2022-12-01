@@ -38,6 +38,45 @@
 <h1 th:text="${titulo}" style="text-align: center"></h1>
 
 
+<div class="container mt2 ">
+   <h1 th:text="${titulo}" ></h1>   
+   <br>
+   <h2 th:text="${Estado}"></h2>
+
+		<!-- ESTE ES LA LISTA-->
+		<div class="list-group mt-2" th:each="usuario : ${listita1}">
+			<div class="card" style="width: 18rem">
+			
+			     <div class="card-body">
+				     <h5 class="card-title" th:text="${usuario.Nombre}"></h5>
+						<ul class="list-group list-group-flush" >
+						  <li class="list-group-item" th:text="${usuario.User}"></li>
+						  <li class="list-group-item" th:text="${usuario.Password}"></li>
+						  <li class="list-group-item" th:text="${usuario.Cod_Sucursal}"></li>
+
+						</ul>
+						<a class="btn btn-success">Editar</a> 
+						<a class="btn btn-danger">Eliminar</a>
+					
+				</div>
+			</div>
+		</div>
+
+  </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- FOOTER -->
 

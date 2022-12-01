@@ -112,7 +112,7 @@ public class HomeController {
 		
 		    model.addAttribute("listita1",rspta.getData());
 			model.addAttribute("tituloPagina", titlePage);
-			model.addAttribute("tituloFormulario1", "Formulario Mascota");			
+			model.addAttribute("titulo", "Formulario Usuario");			
 			
 			
 			
