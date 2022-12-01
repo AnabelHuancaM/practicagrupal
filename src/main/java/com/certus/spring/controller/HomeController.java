@@ -45,7 +45,7 @@ public class HomeController {
 	public String ListarPersonajes(Model model) {
 	   
 	   model.addAttribute("TituloPagina", titlePage);
-		model.addAttribute("titulo", "Esta es la lita de usuarios");
+		model.addAttribute("titulo", "Esta es la lista de usuarios");
 	   return "Lista";
 		}
    
