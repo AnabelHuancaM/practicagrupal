@@ -1,9 +1,19 @@
 package com.certus.spring.models;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Usuario {
+	
+	@NotEmpty(message = "Completar el nombre")
 	private String Nombre;
+	
+	@NotEmpty(message = "Completar user")
 	private String User;
+	
+	@NotEmpty(message = "Completar el password")
 	private String Password;
+	
+	@NotEmpty(message = "Completar el cod_sucursal")
 	private String Cod_Sucursal;
 	
 	public String getNombre() {

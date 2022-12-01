@@ -73,7 +73,7 @@ public class HomeController {
    @GetMapping("/crear")
 	public String Formulario(Model model) {
 		model.addAttribute("tituloPagina", titlePage);
-		model.addAttribute("tituloFormulario", "Formulario usuario");
+		model.addAttribute("titulo", "Formulario usuario");
 
 		Usuario usuario = new Usuario();
 		model.addAttribute("usuario", usuario);
@@ -105,14 +105,14 @@ public class HomeController {
 	public String crearUsuario(@Valid Usuario random, BindingResult result ,Model model) {
 			
 		if (result.hasErrors()) {
-			return "Formulario1";
+			return "Formulario";
 		}
 		
 		Response<Usuario> rspta = InterfaceUsuario.crearUsuario(random);
 		
 		    model.addAttribute("listita1",rspta.getData());
 			model.addAttribute("tituloPagina", titlePage);
-			model.addAttribute("titulo", "Formulario Usuario");			
+	
 			
 			
 			

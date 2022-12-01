@@ -24,20 +24,20 @@ public class UsuarioService implements IUsuarioService {
 		
 		Usuario usuario1 = new Usuario();
 
-		usuario1.setNombre("aaaaaaaa");
-		usuario1.setUser("222222");
-		usuario1.setPassword("aaaaa");
-		usuario1.setCod_Sucursal("222222");
+		usuario1.setNombre("Pepe");
+		usuario1.setUser("pepe002");
+		usuario1.setPassword("1234");
+		usuario1.setCod_Sucursal("001");
 
 		
 		//Creando segunda mascota
 		
 		Usuario usuario2 = new Usuario();
 
-		usuario2.setNombre("eeeeeee");
-		usuario2.setUser("33333");
-		usuario2.setPassword("eeeee");
-		usuario2.setCod_Sucursal("33333");
+		usuario2.setNombre("Luis");
+		usuario2.setUser("luis34");
+		usuario2.setPassword("4546");
+		usuario2.setCod_Sucursal("002");
  
 		
 		//agregando la mascota a la lista

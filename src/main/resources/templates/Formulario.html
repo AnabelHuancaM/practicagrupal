@@ -38,27 +38,27 @@
 
 <!-- formulario  -->
 
-<form  method="post"  class="m-4 container">
+<form  th:action="@{/app/form}" th:object="${usuario}" method="post"  class="m-4 container">
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" name="Nombre" class="form-control" id="nombre">
-    <div class="alert alert-danger" role="alert"  ></div>
+     <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('Nombre')}"  th:errors="*{Nombre}" ></div>
   </div>
   <div class="form-group">
     <label for="user">User</label>
     <input type="text" name="User" class="form-control" id="user">
-   <div class="alert alert-danger" role="alert"></div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('User')}"  th:errors="*{User}" ></div>
   </div>
    <div class="form-group">
     <label for="password">Password</label>
     <input type="password" name="Password" class="form-control" id="password">
-   <div class="alert alert-danger" role="alert"  ></div>
+    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('Nombre')}"  th:errors="*{Password}" ></div>
   </div>
   
    <div class="form-group">
     <label for="cod-sucursal">Cod_Sucursal</label>
     <input type="text" name="Cod_Sucursal" class="form-control" id="cod-sucursal">
-   <div class="alert alert-danger" role="alert"  ></div>
+   <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('Cod_Sucursal')}"  th:errors="*{Cod_Sucursal}" ></div>
   </div>
   
   
@@ -67,7 +67,14 @@
 </form>
 
 <!-- FOOTER -->
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
  <!--footer-->
 	<footer class="bg-dark text-center text-white">
       <!-- Grid container -->
