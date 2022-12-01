@@ -31,7 +31,8 @@ public class HomeController {
    @GetMapping({ "/home", "/inicio", "/", "/Home", "/Inicio" })
 	public String Home(Model model) {
 	   model.addAttribute("TituloPagina", titlePage);
-		model.addAttribute("titulo1", "Esta es la lista de mascotas");
+		model.addAttribute("titulo", "Esta es el home");
+		
 		
 
 
@@ -42,6 +43,9 @@ public class HomeController {
   
    @GetMapping("/listar")
 	public String ListarPersonajes(Model model) {
+	   
+	   model.addAttribute("TituloPagina", titlePage);
+		model.addAttribute("titulo", "Esta es la lita de usuarios");
 	   return "Lista";
 		}
    
@@ -49,8 +53,9 @@ public class HomeController {
    
    @GetMapping("/crear")
 	public String Formulario(Model model) {
-
-
+	   model.addAttribute("TituloPagina", titlePage);
+	   model.addAttribute("titulo", "Formulario");
+	   
 		return "Formulario";
 	}
    
